@@ -1,0 +1,24 @@
+{
+  "name": "Hapi-openapi3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -v"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^9.0.1",
+    "@hapi/boom": "^9.1.0",
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/lab": "^22.0.4",
+    "blipp": "^4.0.1",
+    "merge-object-files": "^2.0.0"
+  },
+  "devDependencies": {
+    "@hapi/code": "^8.0.1"
+  }
+}

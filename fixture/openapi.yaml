@@ -1,0 +1,309 @@
+openapi: 3.0.0
+info:
+  description: A fake API for testing purpose
+  version: 1.0.0
+  title: hapi-openapi3
+components:
+  schemas:
+    mySchema:
+      type: object
+      required:
+        - name
+        - age
+      properties:
+        name:
+          type: string
+        age:
+          type: integer
+paths:
+  /all/{id}:
+    post:
+      summary: This is the description
+      parameters:
+        - in: query
+          name: unique
+          required: true
+          schema:
+            type: boolean
+        - in: path
+          name: id   # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: payload description
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - person
+              properties:
+                person:
+                  $ref: '#/components/schemas/mySchema'
+                children:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: integer
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /query:
+    get:
+      summary: Query params test route
+      parameters:
+        - in: query
+          name: id   # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /path/{id}:
+    get:
+      summary: Path params test route
+      parameters:
+        - in: path
+          name: id   # Note the name is the same as in the path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /array:
+    post:
+      summary: array test route
+      requestBody:
+        description: payload description
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                propArray:
+                  type: array
+                  items:
+                    type: integer
+                propArrayMin:
+                  type: array
+                  minItems: 3
+                  items:
+                    type: integer
+                propArrayMax:
+                  type: array
+                  maxItems: 3
+                  items:
+                    type: integer
+                propArrayUnique:
+                  type: array
+                  uniqueItems: true
+                  items:
+                    type: integer
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /string:
+    post:
+      summary: string test route
+      requestBody:
+        description: payload description
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                propString:
+                  type: string
+                propStringMin:
+                  type: string
+                  minLength: 2
+                propStringMax:
+                  type: string
+                  maxLength: 2
+                propStringPattern:
+                  type: string
+                  pattern: 'a{3,6}'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /integer:
+    post:
+      summary: Integer test route
+      requestBody:
+        description: payload description
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                propInteger:
+                  type: integer
+                propIntegerMin:
+                  type: integer
+                  minimum: 2
+                propIntegerMinExclusive:
+                  type: integer
+                  minimum: 2
+                  exclusiveMinimum: true
+                propIntegerMax:
+                  type: integer
+                  maximum: 2
+                propIntegerMaxExclusive:
+                  type: integer
+                  maximum: 2
+                  exclusiveMaximum: true
+                propIntegerMultiple:
+                  type: integer
+                  multipleOf: 3
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /date:
+    post:
+      summary: Date test route
+      requestBody:
+        description: payload description
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                propDate:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /payload:
+    post:
+      summary: Payload test route
+      requestBody:
+        description: payload description
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - propRequired
+              properties:
+                propRequired:
+                  type: boolean
+                  default: true
+                propString:
+                  type: string
+                  description: user name
+                propBoolean:
+                  type: boolean
+                  description: user name
+                propInteger:
+                  type: integer
+                propNumber:
+                  type: number
+                propIntegerArray:
+                  type: array
+                  items:
+                    type: integer
+                propDate:
+                  type: string
+                  format: date
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /number:
+    post:
+      summary: Number test route
+      requestBody:
+        description: payload description
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                propNumber:
+                  type: number
+                propNumberMin:
+                  type: number
+                  minimum: 2
+                propNumberMinExclusive:
+                  type: number
+                  minimum: 2
+                  exclusiveMinimum: true
+                propNumberMax:
+                  type: number
+                  maximum: 2
+                propNumberMaxExclusive:
+                  type: number
+                  maximum: 2
+                  exclusiveMaximum: true
+                propNumberMultiple:
+                  type: number
+                  multipleOf: 3
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+  /boolean:
+    post:
+      summary: Boolean test route
+      requestBody:
+        description: payload description
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                propBoolean:
+                  type: boolean
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
