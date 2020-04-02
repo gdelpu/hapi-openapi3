@@ -4,7 +4,7 @@ module.exports = {
     'coverage-exclude': [
         'node_modules'
     ],
-    reporter: ['console', 'lcov', 'junit'],
+    reporter: ['lcov', 'lcov', 'junit'],
     output: ['stdout',  './reports/lcov.info', './reports/tests.xml'],
     threshold: 85,
     lint: false,

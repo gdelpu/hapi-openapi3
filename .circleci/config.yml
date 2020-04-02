@@ -3,6 +3,8 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
+    environment:
+      COVERALLS_REPO_TOKEN: 9lr5EFkAyIgc2eZ3CC4dQ5agO69lTgXQY
     executor:
       name: node/default
     steps:
