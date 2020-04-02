@@ -11,6 +11,10 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: reports
 workflows:
     build-and-test:
       jobs:

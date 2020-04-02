@@ -2,9 +2,9 @@
   "name": "Hapi-openapi3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": ".lib/index.js",
   "scripts": {
-    "test": "lab -v"
+    "test": "lab"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,7 @@
     "@hapi/hapi": "^19.1.1",
     "@hapi/joi": "^17.1.1",
     "@hapi/lab": "^22.0.4",
-    "blipp": "^4.0.1",
-    "merge-object-files": "^2.0.0"
+    "blipp": "^4.0.1"
   },
   "devDependencies": {
     "@hapi/code": "^8.0.1"
