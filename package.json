@@ -1,7 +1,10 @@
 {
-  "name": "Hapi-openapi3",
+  "name": "hapi-openapi3",
   "version": "0.1.0",
   "description": "Design-driven APIs with HAPI & OpenAPI 3. Inspired by Hapi-openapi from KrakenJS (https://github.com/krakenjs/hapi-openapi)",
+  "engines": {
+    "node": "12"
+  },
   "main": "index.js",
   "files": [
     "lib"
