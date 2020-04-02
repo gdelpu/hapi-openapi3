@@ -1,21 +1,25 @@
 {
-  "name": "hapi-openapi3",
+  "name": "Hapi-openapi3",
   "version": "0.1.0",
-  "description": "",
-  "engines": {
-    "node": "12"
+  "description": "Design-driven APIs with HAPI & OpenAPI 3. Inspired by Hapi-openapi from KrakenJS (https://github.com/krakenjs/hapi-openapi)",
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdelpu/hapi-openapi3.git"
   },
-  "main": ".lib/index.js",
   "scripts": {
     "test": "lab | ./node_modules/.bin/coveralls",
     "testlocal": "lab --reporter console"
   },
   "keywords": [
     "hapi",
-    "plugin",
-    "openapi3"
+    "openapi",
+    "plugin"
   ],
-  "author": "Grégory DELPU <gdelpu@gmail.com>",
+  "author": "Gregory DELPU <gdelpu@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@apidevtools/swagger-parser": "^9.0.1",
