@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    post: (req, h) => {
+    get: (req, h) => {
         return 'ok.';
     }
 };

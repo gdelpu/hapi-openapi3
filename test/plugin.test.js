@@ -3,7 +3,7 @@ const Lab = require('@hapi/lab');
 const Hapi = require('@hapi/hapi');
 const Boom = require('@hapi/boom');
 
-const Plugin = require('../plugin');
+const Plugin = require('../lib');
 
 const { expect } = Code;
 const { describe, it, before } = exports.lab = Lab.script();
@@ -25,7 +25,8 @@ const initServer = async () => {
             plugin: Plugin,
             options: {
                 api: './fixture/openapi.yaml',
-                ignoreUnsupportedFields: true
+                ignoreUnsupportedFields: true,
+                handlers: './fixture/handlers'
             }
         }]);
 
