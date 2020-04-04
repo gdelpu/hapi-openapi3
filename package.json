@@ -1,7 +1,7 @@
 {
-  "name": "hapi-openapi3",
+  "name": "@biker/hapi-openapi3",
   "version": "0.1.0",
-  "description": "",
+  "description": "Hapi plugin creating routes from an OpenAPI3 spec and mapping them to handlers. Decorate routes with all necessary validators",
   "engines": {
     "node": "12"
   },
